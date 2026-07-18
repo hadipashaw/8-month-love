@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>هشت سال با تو</title>
+<meta name="description" content="یک نامه‌ی دیجیتال کوچک برای هشتمین سالگرد عشق ما.">
+
+<!-- ═══════════════════════════════════════════════════════════
+     فونت‌های فارسی
+     Vazirmatn  → متن اصلی و رابط کاربری
+     Aref Ruqaa  → عنوان‌ها (حس خوشنویسی و لوکس)
+     Noto Nastaliq Urdu → متن نامه (حس دست‌نویس)
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     لایه‌ی پس‌زمینه‌ی سینمایی — رنگش با اسکرول عوض می‌شود
+     مشکی → بنفش → صورتی → رزگلد → کرم
+     ═══════════════════════════════════════════════════════════ -->
+<div class="cinema-bg" aria-hidden="true">
+  <div class="cinema-bg__grain"></div>
+  <div class="cinema-bg__glow cinema-bg__glow--one"></div>
+  <div class="cinema-bg__glow cinema-bg__glow--two"></div>
+</div>
+
+<!-- گلبرگ‌های شناور -->
+<canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+<!-- نوار پیشرفت اسکرول -->
+<div class="progress-rail" aria-hidden="true"><div class="progress-rail__fill" id="progressFill"></div></div>
+
+<main id="main">
+
+  <!-- ═══════════ بخش ۱ — درِ ورودی ═══════════ -->
+  <section class="section hero" id="hero">
+    <div class="hero__inner">
+      <p class="hero__eyebrow reveal-item" data-delay="0">هشتمین سالگرد ما</p>
+      <h1 class="hero__title">
+        <span class="reveal-line" data-delay="1">هشت سال گذشت،</span>
+        <span class="reveal-line reveal-line--accent" data-delay="2">و هنوز اول عشق‌مونه</span>
+      </h1>
+      <p class="hero__subtitle reveal-item" data-delay="3">
+        یک گوشه‌ی کوچیک از اینترنت، فقط برای تو ساخته شده. <br class="hero__br">
+        برای مرور کردنِ راهی که با هم اومدیم.
+      </p>
+      <div class="hero__cue reveal-item" data-delay="4" id="scrollCue">
+        <span class="hero__cue-text">برای دیدن خاطرات، پایین بیا</span>
+        <span class="hero__cue-line"><span class="hero__cue-dot"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ بخش ۲ — گالری ═══════════ -->
+  <section class="section gallery" id="gallery">
+    <div class="gallery__head">
+      <p class="section-eyebrow" data-reveal>خاطره‌ها</p>
+      <h2 class="section-title" data-reveal>چهار قاب از یک عشق</h2>
+      <p class="section-lead" data-reveal>هرکدوم از این‌ها یه لحظه‌ست که دلم می‌خواد هزار بار دوباره زندگیش کنم.</p>
+    </div>
+
+    <div class="frame-grid">
+      <button class="frame" type="button" data-caption="اولین باری که با هم خندیدیم" style="--frame-index:0">
+        <span class="frame__glass"></span>
+        <span class="frame__media">
+          <img src="images/photo1.jpg" alt="اولین باری که با هم خندیدیم" loading="lazy"
+               onerror="this.closest('.frame').classList.add('frame--empty')">
+          <span class="frame__placeholder" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM9 4l-1.8 2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9z"/></svg>
+            <span>photo1.jpg</span>
+          </span>
+        </span>
+        <span class="frame__shine"></span>
+        <span class="frame__caption">اولین باری که با هم خندیدیم</span>
+      </button>
+
+      <button class="frame" type="button" data-caption="اولین سفرمون" style="--frame-index:1">
+        <span class="frame__glass"></span>
+        <span class="frame__media">
+          <img src="images/photo2.jpg" alt="اولین سفرمون" loading="lazy"
+               onerror="this.closest('.frame').classList.add('frame--empty')">
+          <span class="frame__placeholder" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM9 4l-1.8 2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9z"/></svg>
+            <span>photo2.jpg</span>
+          </span>
+        </span>
+        <span class="frame__shine"></span>
+        <span class="frame__caption">اولین سفرمون</span>
+      </button>
+
+      <button class="frame" type="button" data-caption="یه غروب معمولی که خاص شد" style="--frame-index:2">
+        <span class="frame__glass"></span>
+        <span class="frame__media">
+          <img src="images/photo3.jpg" alt="یه غروب معمولی که خاص شد" loading="lazy"
+               onerror="this.closest('.frame').classList.add('frame--empty')">
+          <span class="frame__placeholder" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM9 4l-1.8 2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9z"/></svg>
+            <span>photo3.jpg</span>
+          </span>
+        </span>
+        <span class="frame__shine"></span>
+        <span class="frame__caption">یه غروب معمولی که خاص شد</span>
+      </button>
+
+      <button class="frame" type="button" data-caption="امروزِ ما" style="--frame-index:3">
+        <span class="frame__glass"></span>
+        <span class="frame__media">
+          <img src="images/photo4.jpg" alt="امروزِ ما" loading="lazy"
+               onerror="this.closest('.frame').classList.add('frame--empty')">
+          <span class="frame__placeholder" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM9 4l-1.8 2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9z"/></svg>
+            <span>photo4.jpg</span>
+          </span>
+        </span>
+        <span class="frame__shine"></span>
+        <span class="frame__caption">امروزِ ما</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- لایتباکس گالری -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox__stage" id="lightboxStage">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+      <div class="lightbox__placeholder" id="lightboxPlaceholder">
+        <svg viewBox="0 0 24 24" width="48" height="48"><path fill="currentColor" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM9 4l-1.8 2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9z"/></svg>
+      </div>
+      <canvas id="lightboxParticles"></canvas>
+    </div>
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="بستن">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <!-- ═══════════ بخش ۳ — نامه‌ی عاشقانه ═══════════ -->
+  <section class="section letter-section" id="letterSection">
+    <div class="letter-section__head">
+      <p class="section-eyebrow" data-reveal>برایت نوشتم</p>
+      <h2 class="section-title" data-reveal>یک نامه، فقط برای تو</h2>
+      <p class="section-lead" data-reveal>پاکت رو باز کن.</p>
+    </div>
+
+    <div class="envelope-wrap" data-reveal>
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="باز کردن نامه">
+
+        <!-- کاغذ داخل نامه -->
+        <div class="envelope__letter" id="envelopeLetter">
+          <div class="paper">
+            <div class="paper__texture"></div>
+            <p class="paper__text">
+              <span class="paper__line" data-line="0">عزیزِ من،</span>
+              <span class="paper__line" data-line="1">هشت سال گذشته، و من هنوز از اول هر روز با فکر تو بیدار می‌شم.</span>
+              <span class="paper__line" data-line="2">از روزهای ساده‌ای که به یاد‌موندنی شدن، تا شب‌هایی که فقط با یه خنده‌ی تو، خوب شدن.</span>
+              <span class="paper__line" data-line="3">هرچی گذشت، تو همون آدمی بودی که دلم آروم می‌گیره کنارش.</span>
+              <span class="paper__line" data-line="4">ممنونم که موندی، که با من بزرگ شدی، که این هشت سال رو با من ساختی.</span>
+              <span class="paper__line paper__line--sign" data-line="5">همیشه‌ی من باش. — با تمام قلبم</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- بدنه‌ی پاکت -->
+        <div class="envelope__body">
+          <div class="envelope__back"></div>
+          <div class="envelope__pocket envelope__pocket--left"></div>
+          <div class="envelope__pocket envelope__pocket--right"></div>
+          <div class="envelope__flap" id="envelopeFlap">
+            <span class="envelope__seal">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 21s-7.5-4.6-10-9.3C.5 8 2.4 4.6 5.8 4.1c2-.3 3.9.7 5 2.4a5.9 5.9 0 0 1 5-2.4c3.4.5 5.3 3.9 3.8 7.6C19.5 16.4 12 21 12 21z"/></svg>
+            </span>
+          </div>
+          <div class="envelope__pocket-front"></div>
+        </div>
+      </div>
+      <p class="envelope-hint" id="envelopeHint">برای باز شدن، لمسش کن</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ بخش ۴ — پایانی ═══════════ -->
+  <section class="section finale" id="finale">
+    <div class="finale__inner">
+      <p class="section-eyebrow" data-reveal>و این فقط شروعشه</p>
+      <h2 class="finale__title" data-reveal>بریم برای هشت سالِ بعدی؟</h2>
+      <p class="section-lead finale__lead" data-reveal>
+        هرچی که بود، هرچی که هست، تو بهترین تصمیم زندگیمی.
+      </p>
+
+      <div class="magnetic-zone" id="magneticZone" data-reveal>
+        <a href="https://example.com" class="magnetic-btn" id="magneticBtn" data-href="https://example.com">
+          <span class="magnetic-btn__glow"></span>
+          <span class="magnetic-btn__label">قدم بعدی رو با هم برداریم</span>
+        </a>
+      </div>
+
+      <p class="finale__footnote" data-reveal>ساخته‌شده با عشق، برای یک هشت‌سالگی. ✦</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
